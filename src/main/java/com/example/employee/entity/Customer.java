@@ -1,9 +1,7 @@
 package com.example.employee.entity;
 
 
-        import lombok.AllArgsConstructor;
-        import lombok.Getter;
-        import lombok.Setter;
+        import lombok.*;
 
         import javax.persistence.Entity;
         import javax.persistence.GeneratedValue;
@@ -11,10 +9,12 @@ package com.example.employee.entity;
         import javax.persistence.Id;
         import java.util.Date;
 
+@ToString
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public class Customer {
 
     @Id
@@ -23,22 +23,6 @@ public class Customer {
     private String firstName;
     private String lastName;
 
-    private String depId;
-    private Date joiningDate;
-    private int salary;
-
-    protected Customer() {}
 
 
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "empId=" + empId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", depId='" + depId + '\'' +
-                ", joiningDate=" + joiningDate +
-                ", salary='" + salary + '\'' +
-                '}';
-    }
 }
