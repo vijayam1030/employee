@@ -16,6 +16,7 @@ import java.util.Optional;
 public class CustomerController {
     CustomerService customerService;
 
+
     public CustomerController(CustomerService service) {
         this.customerService = service;
     }
@@ -64,16 +65,6 @@ public class CustomerController {
         }
     }
 
-    @PostMapping("/udpate")
-    public ResponseEntity<Object> updateCustomer(@RequestBody Customer customer){
-        try{
-        //    customerService.updateCustomer(customer);
-            return new ResponseEntity<>(customer, HttpStatus.OK);
-
-        }catch(Exception e) {
-            return new ResponseEntity<>(customer, HttpStatus.NOT_FOUND);
-        }
-    }
 
     @GetMapping("/five")
     public ResponseEntity<List<Customer>> getFiveCustomers(){
@@ -106,10 +97,10 @@ public class CustomerController {
         }
     }
 
-    @PostMapping("/update")
-    public ResponseEntity<List<Customer>> updateCustomer(Customer customer){
-         customerService.update(customer);
-    }
+//    @PostMapping("/update")
+//    public ResponseEntity<Customer> update(Customer customer){
+//        return  new ResponseEntity<>(customerService.update(customer).get(),HttpStatus.OK);
+//    }
 
 
 

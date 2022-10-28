@@ -21,7 +21,7 @@ interface CustomerRepository extends JpaRepository<Customer, Long> {
       @Query("select t from Customer t where t.firstName = ?1")
       Optional<List<Customer>> findByFirstName(String firstName);
 
-      @Query("update t Customer t set id = ?1 where t.firstName = ?2")
-      Optional<Customer> update(Customer customer);
-   //   Optional<Customer> updateCustomer(Customer customer);
+//      @Query("update t Customer t set id = ?1 where t.firstName = ?2")
+//      Optional<Customer> update(Customer customer);
+//   //   Optional<Customer> updateCustomer(Customer customer);
 }
